@@ -1,0 +1,22 @@
+if (c == 6){ 
+            cout << " Номер столика с максимальным ожиданием - " ; 
+        int max = 0; 
+        int preobraz;
+        int s;
+        
+        for (int i = 0; i < n; i++){ 
+           
+            for (int j = 0; j < m; j++){ 
+                
+                    if  (j = 3){
+                        preobraz = stoi(cafe[i][j]);
+                        
+                        if (preobraz > max){ 
+                        max = preobraz;
+                        s = i;
+                        }
+                    }
+                } 
+            } 
+          cout << cafe[s][1];
+        }
