@@ -183,7 +183,7 @@ int main()
                 //cout << "max = " << max << ", tab = " << tab << endl;
                 k++;
             }
-            cout << cafe[tab][0] << " (время ожидания = " << max << ")";
+            cout << cafe[tab][1] << " (время ожидания = " << max << ")";
         } 
         if (choice == 6)
         {
