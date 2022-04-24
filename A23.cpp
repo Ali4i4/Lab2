@@ -161,36 +161,55 @@ int main()
         }
         if (choice == 5)
         {  
-            cout << endl << "Столик с максимальным ожиданием - ";
+            cout << endl << "Столик с максимальным ожиданием: " << endl;
             int k = 0;
-            int sum;
-            int max;
-            int tab;
+            int sum = 0;
+            int max = 0;
+            int l = 2;
+            int b[n][l];
             while (k < n)
             {
                 sum = 0;
                 for (int i = 0; i < n; i++)
                 {
-                    if (stoi(cafe[i][1]) == stoi(cafe[k][1]))
+                    if (stoi(cafe[k][1]) == stoi(cafe[i][1]))
                         sum += stoi(cafe[i][3]);
-                    //cout << endl << "k = " << k << ", i = " << i << ", sum = " << sum;
                 }
                 if (max < sum)
-                {
                     max = sum;
-                    tab = k;
+                b[k][0] = stoi(cafe[k][1]);
+                b[k][1] = sum;
+                k++;
+            } //нашли максимум
+            k = 0;
+            while (k < n)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (b[k][0] == b[i][0] && i != k)
+                    {
+                        b[i][1] = 0;
+                        b[i][0] = 0;
+                    }
                 }
-                //cout << "max = " << max << ", tab = " << tab << endl;
                 k++;
             }
-            cout << cafe[tab][1] << " (время ожидания = " << max << ")";
+            for (int i = 0; i < n; i++)
+            {
+                if (b[i][1] == max)
+                    cout << "стол " << b[i][0] << " (время ожидания = " << max << ")" << endl;
+            }
         } 
         if (choice == 6)
         {
             cout << endl << "Под каким номером заказа посмотреть? ";
             int nom;
+            int prove = 0;
             cin >> nom;
-            cout << endl << "Детали заказа под номером " << nom << ": " << "стол " << cafe[nom  - 1][1] << ", " << cafe[nom - 1][2] << ", " << "время приготовления - " << cafe[nom - 1][3] << endl;
+            if (nom > n)
+                cout << endl << "Введённый номер заказа не существует. Повторите попытку позже. ";
+            else
+                cout << endl << "Детали заказа под номером " << nom << ": " << "стол " << cafe[nom  - 1][1] << ", " << cafe[nom - 1][2] << ", " << "время приготовления - " << cafe[nom - 1][3] << endl;
         }
         if (choice == 7)
         {
@@ -225,3 +244,4 @@ int main()
     cout << "Хорошая работа! Ждём ващего возвращения! ";
     return 0;
 }
+
