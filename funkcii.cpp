@@ -45,7 +45,6 @@ string* Rewrite(int n, int m, int count, string** cafe){
             cout << endl;
         }
     }
-    return 0;
 }
 
 string* Look(int n, int m, int z, int replace, string** cafe, string** add){
@@ -58,7 +57,6 @@ string* Look(int n, int m, int z, int replace, string** cafe, string** add){
         else
             cout << add[i][0] << "        " << add[i][1] << "          " << add[i][2] << "             " << add[i][3] << "                   " << add[i][4] << endl;
     } 
-    return 0;
 }
 
 string* Change(int n, int m, string** cafe){
@@ -91,13 +89,12 @@ string* Change(int n, int m, string** cafe){
                 }
                 if (j == 4)
                 {
-                    cout << "Введите время обслуживания клиента официантом: ";
+                    cout << "Введите время обслуживания клиента официантом: " << endl;
                     getline(cin, cafe[i][j]);
                 }
             }
         }
     }
-    return 0;
 }
 
 string* Filtr(int n, int m, string** cafe){
@@ -127,7 +124,6 @@ string* Filtr(int n, int m, string** cafe){
     }
     if (prove == 0)
         cout << "Введённый номер стола не действителен для данной таблицы. Повторите попытку позже." << endl;
-    return 0;
 }
 
 string* Max(int n, int m, string** cafe){
@@ -169,7 +165,6 @@ string* Max(int n, int m, string** cafe){
         if (b[i][1] == max)
             cout << "стол " << b[i][0] << " (время ожидания = " << max << ")" << endl;
     }
-    return 0;
 }
 
 string* Nomer(int n, int m, string** cafe){
@@ -191,7 +186,6 @@ string* Nomer(int n, int m, string** cafe){
         }
         cout << "стол " << cafe[str][1] << ", " << cafe[str][2] << ", время приготовления - " << cafe[str][3] << ", время обслуживания - " << cafe[str][4] << endl;
     }
-    return 0;
 }
 
 string* Sortirovka1(int n, int m, string** cafe){
@@ -218,7 +212,6 @@ string* Sortirovka1(int n, int m, string** cafe){
         }
         cout << endl;
     }
-    return 0;
 }
 
 string* Sortirovka2(int n, int m, string** cafe){
@@ -246,7 +239,6 @@ string* Sortirovka2(int n, int m, string** cafe){
     for (int i = 0; i < n; i++){
         cout << cafe[i][0] << "        " << cafe[i][1] << "          " << cafe[i][2] << "             " << cafe[i][3] << "          " << cafe[i][4] << endl;
     }
-    return 0;
 }    
 
 string* Adding(int n, int m, int replace, int z, string** cafe, string** add){
@@ -287,7 +279,6 @@ string* Adding(int n, int m, int replace, int z, string** cafe, string** add){
     cout << endl;
     n += 1;
     replace = 1;
-    return 0;
 }
 
 string* Delete(int n, int m, string** cafe){
@@ -320,7 +311,6 @@ string* Delete(int n, int m, string** cafe){
     }
     cout << "Успешно удалено. " ;
     n = n - 1;
-    return 0;
 }
 
 string* Middle(int n, int m, string** cafe){
@@ -338,14 +328,7 @@ string* Middle(int n, int m, string** cafe){
         summa = summa + stoi(cafe[i][4]) + stoi(cafe[i][3]);
     }
     cout << summa/n << endl;
-    return 0;
 }
- 
-int Vibor(int choice){
-    cout <<  endl << "Нажмите " << endl << "1 - перезапись таблицы заказов" << endl << "2 - просмотр таблицы заказов" << endl << "3 - изменение заказа под номером N" << endl << "4 - фильтрация по номеру стола" << endl << "5 - подсчет номера столика с максимальным ожиданием" << endl << "6 - показать под номером N" << endl << "7 - сортировка по времени ожидания" << endl << "8 - добавить под номером N" << endl << "9 - удалить под номером N" << endl << "10 - вывести среднее время обслуживание клиента" << endl << "0 - выход из приложения" << endl;
-    cin >> choice;
-    return 0;
-}   
 
 int main()
 {
@@ -367,7 +350,6 @@ int main()
     for (int i=0; i < n; i++){
         add[z] = new string[m];
     }
-    cin.ignore();
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -400,7 +382,8 @@ int main()
         }
         cout << endl;
     }
-    Vibor(choice);
+    cout <<  endl << "Нажмите " << endl << "1 - перезапись таблицы заказов" << endl << "2 - просмотр таблицы заказов" << endl << "3 - изменение заказа под номером N" << endl << "4 - фильтрация по номеру стола" << endl << "5 - подсчет номера столика с максимальным ожиданием" << endl << "6 - показать под номером N" << endl << "7 - сортировка по времени ожидания" << endl << "8 - добавить под номером N" << endl << "9 - удалить под номером N" << endl << "10 - вывести среднее время обслуживание клиента" << endl << "0 - выход из приложения" << endl;
+    cin >> choice;
     while (choice != 0)
     {
         if (choice == 1)
@@ -453,7 +436,8 @@ int main()
         {
             Middle(n, m, cafe);
         }
-        Vibor(choice);
+        cout <<  endl << "Нажмите " << endl << "1 - перезапись таблицы заказов" << endl << "2 - просмотр таблицы заказов" << endl << "3 - изменение заказа под номером N" << endl << "4 - фильтрация по номеру стола" << endl << "5 - подсчет номера столика с максимальным ожиданием" << endl << "6 - показать под номером N" << endl << "7 - сортировка по времени ожидания" << endl << "8 - добавить под номером N" << endl << "9 - удалить под номером N" << endl << "10 - вывести среднее время обслуживание клиента" << endl << "0 - выход из приложения" << endl;
+        cin >> choice;
     }
     cout << "Хорошая работа! Ждём ващего возвращения! ";
     return 0;
